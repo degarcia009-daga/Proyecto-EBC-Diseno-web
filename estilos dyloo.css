@@ -1,0 +1,126 @@
+body {
+    font-family: Arial, sans-serif;
+    color: #555;
+    margin: 0;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    border: 2px solid #ccc;
+    padding: 20px;
+}
+
+.box {
+    border: 2px dashed #999;
+    background-color: #f9f9f9;
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+/* Encabezado */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 10px;
+}
+
+.logo-placeholder {
+    width: 120px;
+    height: 50px;
+    background-color: #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+nav {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-link {
+    width: 60px;
+    height: 10px;
+    background-color: #d0d0d0;
+}
+
+/* Elementos UI */
+.btn-placeholder {
+    display: inline-block;
+    width: 200px;
+    height: 40px;
+    background-color: #ccc;
+    line-height: 40px;
+    border-radius: 20px;
+    margin: 10px 0;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.text-line {
+    height: 12px;
+    background-color: #e0e0e0;
+    margin: 10px auto;
+    width: 80%;
+}
+
+.text-line.short {
+    width: 50%;
+}
+
+/* Imágenes */
+.img-placeholder {
+    background-color: #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #888;
+    font-size: 24px;
+    margin-top: 15px;
+}
+
+.hero-img {
+    height: 200px;
+    width: 100%;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.grid-img {
+    height: 120px;
+}
+
+/* Listas */
+ul {
+    list-style-type: square;
+    text-align: left;
+    display: inline-block;
+}
+
+/* Ajustes específicos para limpieza de código HTML */
+.promo-box {
+    border: 2px solid #555;
+}
+
+.footer-divider {
+    margin-top: 20px;
+    border-color: #ccc;
+}
+
+.footer-logo {
+    margin: 10px auto;
+    width: 80px;
+    height: 30px;
+}
