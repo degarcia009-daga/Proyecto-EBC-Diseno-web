@@ -504,25 +504,49 @@ body {
 @media (max-width: 768px) {
     .header {
         flex-direction: column; /* Pone el logo arriba y la botonera abajo */
-        padding: 15px 10px; /* Reduce los espacios laterales grandes */
-        gap: 15px; /* Añade una separación limpia entre el logo y el menú */
+        padding: 10px; /* Reduce los espacios laterales grandes */
+        gap: 10px; /* Añade una separación limpia entre el logo y el menú */
+    }
+    .logo {
+        font-size: 24px;
+    }
+    
+    .logo-image{
+        max-height: 35px;
     }
 
     .nav-menu {
         display: flex;
         flex-wrap: wrap; /* Permite que los botones bajen a la siguiente fila si no caben */
         justify-content: center; /* Centra todos los botones */
-        gap: 10px; /* Crea una cuadrícula uniforme entre ellos */
+        gap: 6px; /* Crea una cuadrícula uniforme entre ellos */
         width: 100%;
     }
 
     .nav-menu a.btn-nav {
         margin-left: 0; /* Quitamos el margen de 30px que usabas en PC */
         margin-top: 0; /* Evitamos que se empujen hacia abajo de forma dispareja */
-        padding: 8px 15px; /* Hacemos los botones ligeramente más delgados para que quepan mejor */
-        font-size: 0.9rem; /* Reducimos la letra un poquito para pantallas pequeñas */
+        padding: 6px 10px; /* Hacemos los botones ligeramente más delgados para que quepan mejor */
+        font-size: 0.8rem; /* Reducimos la letra un poquito para pantallas pequeñas */
         flex: 1 1 45%; /* Hace que los botones ocupen casi la mitad de la pantalla, formando 2 columnas perfectas */
         text-align: center;
+    }
+}
+
+@media (max-height: 500px) and (orientation: landscape) {
+    .header {
+    
+        position: relative; 
+        flex-direction: row; /* Ponemos logo y botones en una sola línea */
+    }
+    
+    .nav-menu {
+        width: auto;
+    }
+    
+    .nav-menu a.btn-nav {
+        flex: auto; 
+        padding: 4px 8px;
     }
 }
 /* =========================================
