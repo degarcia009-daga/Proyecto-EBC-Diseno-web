@@ -8,6 +8,10 @@
     --color-bg: #FDFBF7;         /* Beige pálido fondo */
     --color-text: #333333;       /* Gris oscuro para textos legibles */
     --color-white: #FFFFFF;
+    --color-new: #f7b35a;
+    --color-new2:#b6e4f1;
+    --color-nav:#f8f4e7;
+    
 }
 
 /* =========================================
@@ -23,26 +27,26 @@ body {
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     background-color: var(--color-bg);
     color: var(--color-text);
-    line-height: 1.6;
+    line-height: 1.8;
 }
 
 /* =========================================
    ENCABEZADO Y NAVEGACIÓN
    ========================================= */
 .header {
-    background-color: var(--color-white);
+    background-color: var(--color-nav);
     padding: 15px 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
     position: sticky;
     top: 0;
     z-index: 100;
 }
 
 .logo {
-    font-size: 40px;
+    font-size: 60px;
     font-weight: 1000;
     color: var(--color-primary);
     letter-spacing: 2px;
@@ -53,15 +57,17 @@ body {
     width: 13%; 
     height: auto;
     object-fit: contain;
+    border-radius: 10%;
 
 }
 
 .nav-menu a {
     text-decoration: none;
-    color: var(--color-secondary);
+    color: var(--color-white);
+    font-size: 1.1rem;
     font-weight: 700;
     margin-left: 30px;
-    transition: color 0.3s ease;
+    transition: color 0.5s ease;
 }
 
 .nav-menu a:hover {
@@ -71,6 +77,24 @@ body {
 /* =========================================
    SECCIÓN PRINCIPAL (HERO)
    ========================================= */
+.hero-wrapper {
+       
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 1.3), rgba(255, 255, 255, 0.85)), 
+        url('logo-dyloo.jpeg');
+        
+    background-position: center; /* Centra el logo exactamente a la mitad */
+    background-repeat: repeat; /* Evita que el logo se repita como un mosaico */
+    
+    /* Controla qué tan grande se ve el logo de fondo. */
+    background-size: 13%; 
+    width: 100%;
+    border-bottom: 2px solid #EAEAEA;
+
+    
+}
+
+
 .hero {
     text-align: center;
     padding: 60px 20px;
@@ -79,26 +103,31 @@ body {
 }
 
 .hero-title {
-    font-size: 2.5rem;
+    font-size: 2.7rem;
     color: var(--color-secondary);
     margin-bottom: 20px;
     line-height: 1.3;
 }
 
 .hero-subtitle {
-    font-size: 1.1rem;
+    font-size: 1.4rem;
     margin-bottom: 30px;
     color: #555;
 }
 
 .hero-image-container {
     margin-top: 40px;
+    display: flex;
+    justify-content: center; /* Centra el video horizontalmente */
 }
 
 .hero-image {
-    max-width: 100%;
+    max-width: 40%;
+    width: 100%; /* Asegura que el video sea fluido dentro de ese 40% */
     border-radius: 15px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    display: block; 
+    object-fit: cover; /* Evita que el video se deforme */
 }
 
 /* =========================================
@@ -120,6 +149,7 @@ body {
     background-color: var(--color-primary);
     color: var(--color-white);
     box-shadow: 0 4px 15px rgba(255, 107, 0, 0.4);
+    margin-top: 20px;
 }
 
 .btn-primary:hover {
@@ -131,11 +161,22 @@ body {
     background-color: transparent;
     color: var(--color-white);
     border: 2px solid var(--color-white);
+    margin-top: 30px;
+    
 }
 
 .btn-outline:hover {
     background-color: var(--color-white);
     color: var(--color-secondary);
+    margin-top: 30px;
+    
+}
+
+.btn-nav {
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+    border: 2px solid var(--color-primary);
+    margin-top: 30px;
 }
 
 /* =========================================
@@ -148,6 +189,12 @@ body {
     margin-bottom: 30px;
 }
 
+.gallery-wrapper {
+    background-color: var(--color-new);
+    width: 100%;
+    border-bottom: 2px solid #EAEAEA;
+}
+
 /* Galería (Grid) */
 .gallery {
     padding: 50px 20px;
@@ -157,22 +204,33 @@ body {
 
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: 1fr;
     gap: 20px;
 }
 
 .gallery-item {
     background-color: var(--color-white);
     border-radius: 10px;
-    padding: 10px;
+    padding: 10PX;
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.5);
+    overflow:hidden;
 }
 
-.gallery-item img {
+.gallery-item video {
     width: 100%;
-    border-radius: 8px;
-    margin-bottom: 10px;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    border-radius: 10px 10px 0 0;
+    margin: 0;
+}
+.gallery-item p {
+    font-weight: 600;
+    font-size: 1.3rem;
+    padding: 15px; 
+    margin: 20px;
 }
 
 .gallery-item2 {
@@ -180,41 +238,194 @@ body {
     border-radius: 10px;
     padding: 10px;
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
 }
-.gallery-item2 img {
-    width: 70%;
+.gallery-item2 video {
+    width: 100%;
+    max-width: 75%;
+    height: auto;
     border-radius: 8px;
-    margin-bottom: 10px;
+    margin: 0 auto 10px auto;
+    display: block;
+    
 }
 
-.gallery-item p {
+.gallery-item2 p {
     font-weight: 600;
-    font-size: 0.9rem;
+    font-size: 1.3rem;
+}
+
+
+.gallery-item3 {
+    background-color: var(--color-white);
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+.gallery-item3 video {
+    width: 100%;
+    max-width: 75%;
+    height: auto;
+    border-radius: 8px;
+    margin: 0 auto 10px auto;
+    display: block;
+    
+}
+
+.gallery-item3 p {
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+
+.video-gallery-item4 {
+     background-color: var(--color-white);
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    overflow:hidden;
+}
+
+.video-gallery-item4 video {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    margin: 0;
+    border-radius: 10px 10px 0 0;
+
+}
+
+.video-gallery-item4 p {
+    font-weight: 600;
+    font-size: 1.3rem;
+    padding: 15px; 
+    margin: 20px;
+}
+
+@media (min-width: 768px) {
+    .gallery-grid{
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .gallery-item{
+        grid-column:span 2;
+    }
+    .video-gallery-item4 {
+        grid-column: span 2;
+    }
 }
 
 /* =========================================
-   BANNER PROMOCIONAL
+   NUESTROS PAQUETES (Tarjetas)
    ========================================= */
-.promo-banner {
-    background: linear-gradient(135deg, var(--color-secondary), #0a1930);
-    color: var(--color-white);
-    text-align: center;
-    padding: 50px 20px;
-    margin: 40px 0;
-    border-top: 5px solid var(--color-accent);
-    border-bottom: 5px solid var(--color-accent);
+
+.packages-section {
+    background: linear-gradient(150deg, var(--color-secondary), #0a1930);
+    border-top: 13px solid var(--color-accent);
+    border-bottom: 15px solid var(--color-accent);
+    padding: 45px 20px;
+    margin: 40px 0; 
 }
 
-.promo-title {
-    font-size: 2rem;
-    color: var(--color-accent);
+
+.packages-section .section-title {
+    color: var(--color-accent); 
+    margin-bottom: 40px;
+}
+
+.packages-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto; 
+}
+
+/* ... El resto de tu código para .package-card se queda exactamente igual ... */
+
+.package-card {
+    background-color: var(--color-white);
+    border: 8px dashed var(--color-secondary); /* Borde punteado inspirado en tu diseño */
+    border-radius: 20px;
+    padding: 30px;
+    width: 100%;
+    max-width: 450px; /* Evita que sean demasiado anchas en PC */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+}
+
+.package-card:hover {
+    transform: translateY(-8px); /* Pequeña animación al pasar el mouse */
+}
+
+.package-header {
+    text-align: center;
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #eaeaea;
+}
+
+.package-header h3 {
+    color: var(--color-secondary);
+    font-size: 1.8rem;
     margin-bottom: 10px;
 }
 
-.promo-subtitle {
-    font-size: 1.5rem;
+.package-header p {
+    font-style: italic;
+    color: #555;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.package-features {
+    list-style: none;
+    margin-bottom: 30px;
+    flex-grow: 1; /* Empuja el precio y el botón hacia abajo si las tarjetas tienen diferente altura */
+}
+
+.package-features li {
+    display: flex;
+    align-items: flex-start;
     margin-bottom: 15px;
+    font-size: 1.05rem;
+    font-weight: 500;
+    line-height: 1.4;
+    color: var(--color-text);
+}
+
+.package-features li span {
+    margin-right: 12px;
+    font-size: 1.3rem;
+}
+
+.package-price {
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 1000;
+    color: var(--color-primary);
+    margin-bottom: 10px;
+}
+
+/* Diseño especial para la Tarjeta VIP */
+.premium-card {
+    background: linear-gradient(135deg, #FFF8E1, #FFECB3); /* Fondo tipo dorado/crema */
+    border-color: var(--color-primary);
+}
+
+.premium-card .package-header h3 {
+    color: var(--color-primary);
+}
+
+.premium-card .package-header {
+    border-bottom: 2px solid rgba(255, 107, 0, 0.2);
 }
 
 /* =========================================
@@ -222,7 +433,8 @@ body {
    ========================================= */
 .features {
     text-align: center;
-    padding: 40px 20px;
+    padding: 10px 10px;
+    background-color: var(--color-new2);
 }
 
 .features-list {
@@ -230,7 +442,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 30px;
+    gap: 50px;
     max-width: 800px;
     margin: 0 auto;
 }
@@ -238,17 +450,29 @@ body {
 .features-list li {
     background-color: var(--color-white);
     padding: 10px 20px;
-    border-radius: 20px;
+    border-radius: 30px;
     font-weight: bold;
     color: var(--color-secondary);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 5px rgba(1,0,0,0.5);
 }
+
+.features-list li {
+    font-size: 25px;
+    margin: 10px;
+}
+
+.section-title {
+    font-size: 45px;
+    margin-top: 10px;
+    padding-bottom: 20px;
+}
+
 
 /* =========================================
    PIE DE PÁGINA (FOOTER)
    ========================================= */
 .footer {
-    background-color: var(--color-white);
+    background-color: var(--color-nav);
     text-align: center;
     padding: 50px 20px 20px;
     margin-top: 50px;
@@ -264,11 +488,65 @@ body {
     margin-top: 40px;
     padding-top: 20px;
     border-top: 1px solid #eaeaea;
-    font-size: 0.85rem;
+    font-size: 1rem;
     color: #777;
 }
 
 .footer-bottom .logo {
-    font-size: 20px;
+    font-size: 50px;
     margin-bottom: 10px;
+    margin-top: -1.8%;
 }
+
+/* =========================================
+   DISEÑO RESPONSIVO (Navegación Móvil)
+   ========================================= */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column; /* Pone el logo arriba y la botonera abajo */
+        padding: 15px 10px; /* Reduce los espacios laterales grandes */
+        gap: 15px; /* Añade una separación limpia entre el logo y el menú */
+    }
+
+    .nav-menu {
+        display: flex;
+        flex-wrap: wrap; /* Permite que los botones bajen a la siguiente fila si no caben */
+        justify-content: center; /* Centra todos los botones */
+        gap: 10px; /* Crea una cuadrícula uniforme entre ellos */
+        width: 100%;
+    }
+
+    .nav-menu a.btn-nav {
+        margin-left: 0; /* Quitamos el margen de 30px que usabas en PC */
+        margin-top: 0; /* Evitamos que se empujen hacia abajo de forma dispareja */
+        padding: 8px 15px; /* Hacemos los botones ligeramente más delgados para que quepan mejor */
+        font-size: 0.9rem; /* Reducimos la letra un poquito para pantallas pequeñas */
+        flex: 1 1 45%; /* Hace que los botones ocupen casi la mitad de la pantalla, formando 2 columnas perfectas */
+        text-align: center;
+    }
+}
+/* =========================================
+   CLASES PARA JAVASCRIPT (Animaciones)
+   ========================================= */
+
+/* Estado inicial (oculto) para las secciones */
+.oculto {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Estado final (visible) cuando el usuario hace scroll */
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Efecto para el header al hacer scroll */
+.header-scrolled {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 10px 50px !important; /* Lo hace un poco más delgado */
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+} 
